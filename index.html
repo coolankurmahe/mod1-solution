@@ -12,21 +12,22 @@
   <script src="app.js"></script>
 
 <body ng-app="LunchCheck">
-   <div class="container" ng-controller="LunchCheckController">
+   <div  class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-
-             <input id="lunch-menu" ng-model="lunchdishes" type="text"
+<!--  NOT considering an empty item, i.e., `, ,` as an item towards to the count,-->
+             <input id="lunch-menu" ng-model="lunchdishes" style="border-color:{{modcolor}}" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
          </div>
          <div class="form-group">
              <button ng-click="checkTooMuch()" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div style="color: {{modcolor}}" class="form-group message" >
            <!-- Your message can go here. -->
-             {{message}}
+           {{message}}
+
          </div>
    </div>
 
